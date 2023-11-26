@@ -1,0 +1,175 @@
+{
+	"info": {
+		"_postman_id": "3326a3f8-2873-4978-ac58-5dcc62002d7d",
+		"name": "Assessment",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18901645",
+		"_collection_link": "https://universal-comet-868600.postman.co/workspace/My-Workspace~c3a6d8ff-9743-477b-8677-2f13cd5bd533/collection/18901645-3326a3f8-2873-4978-ac58-5dcc62002d7d?action=share&source=collection_link&creator=18901645"
+	},
+	"item": [
+		{
+			"name": "create space",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/space/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"space",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create folder",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/folder/create?spaceName=stc-assessments&folderName=folder&userEmail=admin@test.com",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"folder",
+						"create"
+					],
+					"query": [
+						{
+							"key": "spaceName",
+							"value": "stc-assessments"
+						},
+						{
+							"key": "folderName",
+							"value": "folder"
+						},
+						{
+							"key": "userEmail",
+							"value": "admin@test.com"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create file",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/C:/Users/At3f/Downloads/STC-backend-assessment (2).pdf"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/file/create?folderName=folder&userEmail=admin@test.com",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"file",
+						"create"
+					],
+					"query": [
+						{
+							"key": "folderName",
+							"value": "folder"
+						},
+						{
+							"key": "userEmail",
+							"value": "admin@test.com"
+						},
+						{
+							"key": "",
+							"value": "skfuztsectunsiecrftires",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get file metaData",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/file/metadata?userEmail=user@test.com&fileId=3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"file",
+						"metadata"
+					],
+					"query": [
+						{
+							"key": "userEmail",
+							"value": "user@test.com"
+						},
+						{
+							"key": "fileId",
+							"value": "3"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "download file",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/file/download?userEmail=user@test.com&fileId=3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"file",
+						"download"
+					],
+					"query": [
+						{
+							"key": "userEmail",
+							"value": "user@test.com"
+						},
+						{
+							"key": "fileId",
+							"value": "3"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
